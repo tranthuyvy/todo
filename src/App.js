@@ -1,10 +1,16 @@
-import TodoList from "./pages/TodoList";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import TodoList from './pages/TodoList.jsx';
+import TodoDetail from './pages/TodoDetail.jsx';
 
 function App() {
   return (
-    <div className="App">
-      <TodoList />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<TodoList/>} />
+        <Route path="/todo/:id" element={<TodoDetail/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
